@@ -75,11 +75,55 @@
         button:hover {
             background-color: #0f5bbd;
         }
+
+        .container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 2px solid #146ff8;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .ball {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: #146ff8;
+            border-radius: 50%;
+            animation: bounce 1s infinite;
+            transform: translateX(-50%);
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-80px);
+            }
+
+            60% {
+                transform: translateY(-40px);
+            }
+        }
     </style>
 </head>
 
 <body>
     <input type="text" id="sideVar" value="left" style="display: none;">
+    <div class="container">
+        <div class="ball"></div>
+    </div>
 
     <div class="form-container">
         <img src="https://static.timesofisrael.com/blogs/uploads/2020/09/accessibe-is-helping-digital-agencies-and-site-owners-avoid-ada-lawsuits-using-ai.jpg?_gl=1*zgx6zo*_ga*MzM3MTQxNTQ1LjE3MjU1NDQ1NzA.*_ga_RJR2XWQR34*MTcyNTU0NDU3MC4xLjAuMTcyNTU0NDU3MC4wLjAuMA.."
