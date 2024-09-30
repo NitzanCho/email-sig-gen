@@ -213,7 +213,22 @@
                         triggerRadius: '50%'
                     }
                 });
+
+
+                AJS.events.on(window, "acsbWidgetOpen", () => {
+                    try {
+                        const widgetUi = document.querySelector(
+                            '[data-acsb="widget"]'
+                        ).shadowRoot;
+
+                        widgetUi.querySelector('[data-test="readMode"]').remove();
+
+                        widgetUi.querySelector('[data-test="bigBlackCursor"]').style.width =
+                            "65.5%";
+                    } catch (error) { }
+                });
             };
+
             h.appendChild(s);
         })();
     </script>
