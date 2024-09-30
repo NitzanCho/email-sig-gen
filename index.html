@@ -213,8 +213,6 @@
                         triggerRadius: '50%'
                     }
                 });
-
-
                 AJS.events.on(window, "acsbWidgetOpen", () => {
                     try {
                         const widgetUi = document.querySelector(
@@ -227,7 +225,9 @@
                             "65.5%";
                     } catch (error) { }
                 });
+
             };
+
 
             h.appendChild(s);
         })();
