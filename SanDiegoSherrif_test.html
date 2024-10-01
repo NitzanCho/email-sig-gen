@@ -219,9 +219,9 @@
                             '[data-acsb="widget"]'
                         ).shadowRoot;
 
-                        const seizuresDiv = widgetUi.querySelector('[data-test="seizures"]')
-                        seizuresDiv.remove();
-                        // seizuresDiv.quarySelector('.profile-description').remove();
+                        const seizuresDiv = widgetUi.querySelector('[data-test="seizures"]');
+                        const descriptionDiv = seizuresDiv.querySelector('.profile-description');
+                        descriptionDiv.remove();
 
                     } catch (error) { }
                 });
