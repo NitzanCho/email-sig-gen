@@ -223,6 +223,10 @@
                         const descriptionDiv = seizuresDiv.querySelector('.profile-description').firstChild;
                         descriptionDiv.innerText = 'My new description here';
 
+                        const statementDiv = widgetUi.querySelector('.accessibility-statement-modal-content');
+                        const newParagraph = '<p>This is my new paragraph!</p>';
+                        statementDiv.appendChild(newParagraph);
+
                     } catch (error) { }
                 });
 
