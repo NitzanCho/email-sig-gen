@@ -224,7 +224,8 @@
                         descriptionDiv.innerText = 'My new description here';
 
                         const statementDiv = widgetUi.querySelector('.accessibility-statement-modal-content');
-                        const newParagraph = '<p>This is my new paragraph!</p>';
+                        const newParagraph = document.createElement('p');
+                        newParagraph.textContent = 'This is my new paragraph!';
                         statementDiv.appendChild(newParagraph);
 
                     } catch (error) { }
