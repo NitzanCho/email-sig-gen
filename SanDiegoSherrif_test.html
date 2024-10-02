@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1 Nitzan's Signature Generator</title>
+    <title>2 Nitzan's Signature Generator</title>
     <style>
         /* Basic reset and styling */
         body {
@@ -224,8 +224,9 @@
                         descriptionDiv.innerText = 'My new description here';
 
                         //const statementDiv = widgetUi.querySelector('.accessibility-statement-modal-content');
-                        const modalContentDiv = widgetUi.querySelector('.base-card');
-                        if (modalContentDiv) {
+                        const baseCard = widgetUi.querySelector('.base-card');
+                        const statementDiv = baseCard.querySelector('.accessibility-statement-modal-content');
+                        if (statementDiv) {
                             // Select the first <p> inside the div
                             const firstParagraph = modalContentDiv.querySelector('p');
 
