@@ -222,42 +222,13 @@
                         const seizuresDiv = widgetUi.querySelector('[data-test="seizures"]');
                         const descriptionDiv = seizuresDiv.querySelector('.profile-description').firstChild;
                         descriptionDiv.innerText = 'My new description here';
-
-
-
-                        // Function to handle the addition of child nodes
-                        function handleChildNodeAddition(mutations) {
-                            mutations.forEach((mutation) => {
-                                // Check if child nodes have been added
-                                if (mutation.addedNodes.length > 0) {
-                                    console.log('A child node was added:', mutation.addedNodes);
-                                    // You can add additional logic here to handle the new nodes
-                                }
-                            });
+                        const baseCardDiv = document.querySelector('.base-card');
+                        if (baseCardDiv) {
+                            console.log('base card div found');
                         }
-
-                        // Function to observe changes to the specific div
-                        function observeBaseCard() {
-                            // Select the div with the specified class
-                            const baseCardDiv = document.querySelector('.base-card');
-
-                            // Check if the div exists
-                            if (baseCardDiv) {
-                                // Create a MutationObserver
-                                const observer = new MutationObserver(handleChildNodeAddition);
-
-                                // Start observing the selected div for child node additions
-                                observer.observe(baseCardDiv, { childList: true });
-
-                                console.log('Observing child nodes for .base-card');
-                            } else {
-                                console.log('No element with class "base-card" found.');
-                            }
+                        else {
+                            console.log('base card div NOT found');
                         }
-
-                        // Start observing
-                        observeBaseCard();
-
 
 
 
