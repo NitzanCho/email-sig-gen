@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1 Nitzan's Signature Generator</title>
+    <title>2 Nitzan's Signature Generator</title>
     <style>
         /* Basic reset and styling */
         body {
@@ -227,6 +227,7 @@
                         if (statementDiv) {
                             const firstParagraph = statementDiv.querySelector('p');
                             if (firstParagraph) {
+                                console.log(firstParagraph.innerText);
                                 firstParagraph.innerHTML = "I am the captain now!"
                             }
                         }
