@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1 Nitzan's Signature Generator</title>
+    <title>2 Nitzan's Signature Generator</title>
     <style>
         /* Basic reset and styling */
         body {
@@ -225,21 +225,28 @@
 
                         //const statementDiv = widgetUi.querySelector('.accessibility-statement-modal-content');
                         const baseCard = widgetUi.querySelector('.base-card');
-                        const statementDiv = baseCard.querySelector('.accessibility-statement-modal-content');
                         if (baseCard) {
-                            // Select the first <p> inside the div
-                            const firstParagraph = modalContentDiv.querySelector('p');
-
-                            // Check if the first <p> exists
-                            if (firstParagraph) {
-                                // Replace its text content
-                                firstParagraph.textContent = "I'm the captain now!";
-                            } else {
-                                console.log('No <p> element found in the div');
-                            }
-                        } else {
-                            console.log('Div not found');
+                            console.log('base card found');
                         }
+                        else {
+                            console.log('base card NOT found');
+                        }
+                        /*        const statementDiv = baseCard.querySelector('.accessibility-statement-modal-content');
+                                if (baseCard) {
+                                    // Select the first <p> inside the div
+                                    const firstParagraph = modalContentDiv.querySelector('p');
+        
+                                    // Check if the first <p> exists
+                                    if (firstParagraph) {
+                                        // Replace its text content
+                                        firstParagraph.textContent = "I'm the captain now!";
+                                    } else {
+                                        console.log('No <p> element found in the div');
+                                    }
+                                } else {
+                                    console.log('Div not found');
+                                }*/
+
                         /*   if (statementDiv) {
                                alert('here');
                                const firstParagraph = statementDiv.querySelector('p');
