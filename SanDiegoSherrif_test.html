@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1 Nitzan's Signature Generator</title>
+    <title>2 Nitzan's Signature Generator</title>
     <style>
         /* Basic reset and styling */
         body {
@@ -223,8 +223,56 @@
                         const descriptionDiv = seizuresDiv.querySelector('.profile-description').firstChild;
                         descriptionDiv.innerText = 'My new description here';
 
+
+
+                        // Function to handle the addition of child nodes
+                        function handleChildNodeAddition(mutations) {
+                            mutations.forEach((mutation) => {
+                                // Check if child nodes have been added
+                                if (mutation.addedNodes.length > 0) {
+                                    console.log('A child node was added:', mutation.addedNodes);
+                                    // You can add additional logic here to handle the new nodes
+                                }
+                            });
+                        }
+
+                        // Function to observe changes to the specific div
+                        function observeBaseCard() {
+                            // Select the div with the specified class
+                            const baseCardDiv = document.querySelector('.base-card');
+
+                            // Check if the div exists
+                            if (baseCardDiv) {
+                                // Create a MutationObserver
+                                const observer = new MutationObserver(handleChildNodeAddition);
+
+                                // Start observing the selected div for child node additions
+                                observer.observe(baseCardDiv, { childList: true });
+
+                                console.log('Observing child nodes for .base-card');
+                            } else {
+                                console.log('No element with class "base-card" found.');
+                            }
+                        }
+
+                        // Start observing
+                        observeBaseCard();
+
+
+
+
+
+
+
+
+
+
                     } catch (error) { }
                 });
+
+
+
+
 
             };
 
