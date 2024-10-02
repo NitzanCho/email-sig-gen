@@ -222,7 +222,8 @@
                         const seizuresDiv = widgetUi.querySelector('[data-test="seizures"]');
                         const descriptionDiv = seizuresDiv.querySelector('.profile-description').firstChild;
                         descriptionDiv.innerText = 'My new description here';
-                        const baseCardDiv = document.querySelector('.base-card');
+
+                        const baseCardDiv = widgetUi.querySelector('.base-card');
                         if (baseCardDiv) {
                             console.log('base card div found');
                         }
