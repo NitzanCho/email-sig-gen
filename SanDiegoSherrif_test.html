@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2 Nitzan's Signature Generator</title>
+    <title>1 Nitzan's Signature Generator</title>
     <style>
         /* Basic reset and styling */
         body {
@@ -225,6 +225,7 @@
 
                         const statementDiv = widgetUi.querySelector('.accessibility-statement-modal-content');
                         if (statementDiv) {
+                            console.log(statementDic.innerHTML);
                             const firstParagraph = statementDiv.querySelector('p');
                             if (firstParagraph) {
                                 console.log(firstParagraph.innerText);
