@@ -223,15 +223,31 @@
                         const descriptionDiv = seizuresDiv.querySelector('.profile-description').firstChild;
                         descriptionDiv.innerText = 'My new description here';
 
-                        const statementDiv = widgetUi.querySelector('.accessibility-statement-modal-content');
-                        if (statementDiv) {
-                            alert('here');
-                            const firstParagraph = statementDiv.querySelector('p');
+                        //const statementDiv = widgetUi.querySelector('.accessibility-statement-modal-content');
+                        const modalContentDiv = document.querySelector('.accessibility-statement-modal-content');
+                        if (modalContentDiv) {
+                            // Select the first <p> inside the div
+                            const firstParagraph = modalContentDiv.querySelector('p');
+
+                            // Check if the first <p> exists
                             if (firstParagraph) {
-                                console.log(firstParagraph.innerText);
-                                firstParagraph.innerHTML = "I am the captain now!"
+                                // Replace its text content
+                                firstParagraph.textContent = "I'm the captain now!";
+                            } else {
+                                console.log('No <p> element found in the div');
                             }
+                        } else {
+                            console.log('Div not found');
                         }
+                        /*   if (statementDiv) {
+                               alert('here');
+                               const firstParagraph = statementDiv.querySelector('p');
+                               if (firstParagraph) {
+                                   console.log(firstParagraph.innerText);
+                                   firstParagraph.innerHTML = "I am the captain now!"
+                               }
+                           }
+                               */
 
 
                         // --------------------------------------
