@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>URL Crawler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #results {
+            margin-top: 20px;
+        }
+
+        #output {
+            white-space: pre-wrap;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            width: 100%;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Domain URL Crawler</h1>
+    <div>
+        <label for="domainInput">Enter Domain (e.g., example.com):</label>
+        <input type="text" id="domainInput" placeholder="example.com">
+        <button id="crawlBtn">Crawl URLs</button>
+    </div>
+
+    <div id="results">
+        <h3>URLs Found:</h3>
+        <pre id="output">No results yet...</pre>
+    </div>
+
+    <script>
+        document.getElementById('crawlBtn').addEventListener('click', function () {
+            const domain = document.getElementById('domainInput').value.trim();
+            if (!domain) {
+                alert("Please enter a domain.");
+                return;
+            }
+
+            crawlDomain(domain);
+        });
+
+        function crawlDomain(domain) {
+            // Clear the previous results
+            document.getElementById('output').textContent = 'Crawling... Please wait.';
+
+            // Assume you have an API endpoint that accepts the domain and returns the URLs in XML format
+            fetch(`https://your-backend-api.com/crawl?domain=${domain}`)
+                .then(response => response.text())
+                .then(data => {
+                    // Display the returned XML as formatted text in the pre tag
+                    document.getElementById('output').textContent = formatXML(data);
+                })
+                .catch(error => {
+                    console.error('Error crawling domain:', error);
+                    document.getElementById('output').textContent = 'Error retrieving URLs.';
+                });
+        }
+
+        // Function to format XML for display
+        function formatXML(xml) {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xml, "application/xml");
+            const serializer = new XMLSerializer();
+            return serializer.serializeToString(xmlDoc);
+        }
+    </script>
+</body>
+
+</html>
