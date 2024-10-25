@@ -244,9 +244,9 @@
                         const observer = new MutationObserver(callback);
 
                         // Start observing the target node for configured mutations
-                        if (targetNode) {
+                        if (baseCardDiv) {
                             console.log('Base-card div found');
-                            observer.observe(targetNode, config);
+                            observer.observe(baseCardDiv, config);
                         } else {
                             console.log('No element found with class "base-card"');
                         }
