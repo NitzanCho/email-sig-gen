@@ -245,6 +245,8 @@
                                         // Replace the text of the last <p> tag
                                         pElements[pElements.length - 1].textContent = 'NEW TEXT HERE!';
                                     }
+                                } else {
+                                    console.log('mutation detected but no children!')
                                 }
                             }
                         };
