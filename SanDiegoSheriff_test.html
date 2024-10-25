@@ -245,15 +245,11 @@
 
                         // Start observing the target node for configured mutations
                         if (targetNode) {
-                            console.error('Base-card div found');
+                            console.log('Base-card div found');
                             observer.observe(targetNode, config);
                         } else {
-                            console.error('No element found with class "base-card"');
+                            console.log('No element found with class "base-card"');
                         }
-
-
-
-
 
 
                     } catch (error) { }
