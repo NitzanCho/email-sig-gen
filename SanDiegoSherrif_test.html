@@ -240,29 +240,27 @@
                                 if (mutation.type === 'childList') {
                                     // Check if there are any <p> elements under the target node
                                     console.log('mutation detected!');
-                                    const pElements = targetNode.getElementsByTagName('p');
-                                    if (pElements.length > 0) {
-                                        // Replace the text of the last <p> tag
-                                        pElements[pElements.length - 1].textContent = 'NEW TEXT HERE!';
+                                    const aStatement = baseCardDiv.querySelector('.accessibility-statement-modal-content');
+                                    if (accessibilityDiv) {
+                                        console.log('Found accessibility-statement-modal-content div:', accessibilityDiv);
+                                    } else {
+                                        console.log('NOT Found accessibility-statement-modal-content div:', accessibilityDiv);
                                     }
-                                } else {
-                                    console.log('mutation detected but no children!')
                                 }
+                            };
+
+                            const observer = new MutationObserver(callback);
+
+                            // Start observing base-card div
+                            if (baseCardDiv) {
+                                observer.observe(targetNode, config);
+                            } else {
+                                console.error('No element found with class "base-card"');
                             }
-                        };
-
-                        const observer = new MutationObserver(callback);
-
-                        // Start observing the target node for configured mutations
-                        if (targetNode) {
-                            observer.observe(targetNode, config);
-                        } else {
-                            console.error('No element found with class "base-card"');
-                        }
 
 
-                    } catch (error) { }
-                });
+                        } catch (error) { }
+                    });
 
 
 
