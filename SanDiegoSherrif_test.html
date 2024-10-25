@@ -219,26 +219,43 @@
                             '[data-acsb="widget"]'
                         ).shadowRoot;
 
-                        const seizuresDiv = widgetUi.querySelector('[data-test="seizures"]');
-                        const descriptionDiv = seizuresDiv.querySelector('.profile-description').firstChild;
-                        descriptionDiv.innerText = 'My new description here';
+                        // Edit seizures profile description
+
+                        // const seizuresDiv = widgetUi.querySelector('[data-test="seizures"]');
+                        // const descriptionDiv = seizuresDiv.querySelector('.profile-description').firstChild;
+                        // descriptionDiv.innerText = 'My new description here';
 
                         const baseCardDiv = widgetUi.querySelector('.base-card');
                         if (baseCardDiv) {
                             console.log('base card div found');
-
-
                         }
                         else {
                             console.log('base card div NOT found');
                         }
 
+                        const config = { childList: true, subtree: true };
 
+                        const callback = (mutationsList) => {
+                            for (const mutation of mutationsList) {
+                                if (mutation.type === 'childList') {
+                                    // Check if there are any <p> elements under the target node
+                                    const pElements = targetNode.getElementsByTagName('p');
+                                    if (pElements.length > 0) {
+                                        // Replace the text of the last <p> tag
+                                        pElements[pElements.length - 1].textContent = 'NEW TEXT HERE!';
+                                    }
+                                }
+                            }
+                        };
 
+                        const observer = new MutationObserver(callback);
 
-
-
-
+                        // Start observing the target node for configured mutations
+                        if (targetNode) {
+                            observer.observe(targetNode, config);
+                        } else {
+                            console.error('No element found with class "base-card"');
+                        }
 
 
                     } catch (error) { }
