@@ -232,7 +232,7 @@
                             for (const mutation of mutationsList) {
                                 if (mutation.type === 'childList') {
                                     // Check if any child elements include the accessibility-statement-modal-content
-                                    const accessibilityDiv = targetNode.querySelector('.accessibility-statement-modal-content');
+                                    const accessibilityDiv = baseCardDiv.querySelector('.accessibility-statement-modal-content');
                                     if (accessibilityDiv) {
                                         console.log('Found accessibility-statement-modal-content div:', accessibilityDiv);
                                     }
