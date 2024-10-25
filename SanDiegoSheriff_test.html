@@ -235,25 +235,29 @@
                                     const accessibilityDiv = baseCardDiv.querySelector('.accessibility-statement-modal-content');
                                     if (accessibilityDiv) {
                                         console.log('Found accessibility-statement-modal-content div:', accessibilityDiv);
+                                        const pElements = Array.from(accessibilityDiv.getElementsByTagName('p'));
+                                        if (pElements.length > 0) {
+                                            pElements[pElements.length - 1].textContent = 'NEW TEXT HERE!';
+
+                                        }
                                     }
                                 }
+                            };
+
+                            // Create an instance of MutationObserver
+                            const observer = new MutationObserver(callback);
+
+                            // Start observing the target node for configured mutations
+                            if (baseCardDiv) {
+                                console.log('Base-card div found');
+                                observer.observe(baseCardDiv, config);
+                            } else {
+                                console.log('No element found with class "base-card"');
                             }
-                        };
-
-                        // Create an instance of MutationObserver
-                        const observer = new MutationObserver(callback);
-
-                        // Start observing the target node for configured mutations
-                        if (baseCardDiv) {
-                            console.log('Base-card div found');
-                            observer.observe(baseCardDiv, config);
-                        } else {
-                            console.log('No element found with class "base-card"');
-                        }
 
 
-                    } catch (error) { }
-                });
+                        } catch (error) { }
+                    });
 
 
 
