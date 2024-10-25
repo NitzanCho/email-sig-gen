@@ -238,13 +238,13 @@
                         const callback = (mutationsList) => {
                             for (const mutation of mutationsList) {
                                 if (mutation.type === 'childList') {
-                                    // Check if there are any <p> elements under the target node
+
                                     console.log('mutation detected!');
                                     const aStatement = baseCardDiv.querySelector('.accessibility-statement-modal-content');
-                                    if (accessibilityDiv) {
-                                        console.log('Found accessibility-statement-modal-content div:', accessibilityDiv);
+                                    if (aStatement) {
+                                        console.log('Found accessibility-statement-modal-content div:', aStatement);
                                     } else {
-                                        console.log('NOT Found accessibility-statement-modal-content div:', accessibilityDiv);
+                                        console.log('NOT Found accessibility-statement-modal-content div:', aStatement);
                                     }
                                 }
                             };
