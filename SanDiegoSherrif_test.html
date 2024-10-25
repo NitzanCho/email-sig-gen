@@ -239,6 +239,7 @@
                             for (const mutation of mutationsList) {
                                 if (mutation.type === 'childList') {
                                     // Check if there are any <p> elements under the target node
+                                    console.log('mutation detected!');
                                     const pElements = targetNode.getElementsByTagName('p');
                                     if (pElements.length > 0) {
                                         // Replace the text of the last <p> tag
