@@ -234,6 +234,37 @@
                         }
 
 
+                        // Select the target node
+                        //const targetNode = document.querySelector('.base-card');
+
+                        // Options for the observer (which mutations to observe)
+                        const config = { childList: true, subtree: true };
+
+                        // Callback function to execute when mutations are observed
+                        const callback = (mutationsList) => {
+                            for (const mutation of mutationsList) {
+                                if (mutation.type === 'childList') {
+                                    // Check if any child elements include the accessibility-statement-modal-content
+                                    const accessibilityDiv = baseCardDiv.querySelector('.accessibility-statement-modal-content');
+                                    if (accessibilityDiv) {
+                                        console.log('Found accessibility-statement-modal-content div:', accessibilityDiv);
+                                    }
+                                }
+                            }
+                        };
+
+                        // Create an instance of MutationObserver
+                        const observer = new MutationObserver(callback);
+
+                        // Start observing the target node for configured mutations
+                        if (baseCardDiv) {
+                            observer.observe(baseCardDiv, config);
+                        } else {
+                            console.error('No element found with class "base-card"');
+                        }
+
+
+
                     } catch (error) { }
                 });
 
