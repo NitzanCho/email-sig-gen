@@ -218,7 +218,7 @@
                         const widgetUi = document.querySelector(
                             '[data-acsb="widget"]'
                         ).shadowRoot;
-
+                        console.log('testing');
                         // Edit seizures profile description
 
                         // const seizuresDiv = widgetUi.querySelector('[data-test="seizures"]');
@@ -231,7 +231,6 @@
                         const callback = (mutationsList) => {
                             for (const mutation of mutationsList) {
                                 if (mutation.type === 'childList') {
-                                    // Check if any child elements include the accessibility-statement-modal-content
                                     const accessibilityDiv = baseCardDiv.querySelector('.accessibility-statement-modal-content');
                                     if (accessibilityDiv) {
                                         console.log('Found accessibility-statement-modal-content div:', accessibilityDiv);
