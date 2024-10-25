@@ -226,26 +226,13 @@
                         // descriptionDiv.innerText = 'My new description here';
 
                         const baseCardDiv = widgetUi.querySelector('.base-card');
-                        if (baseCardDiv) {
-                            console.log('base card div found');
-                        }
-                        else {
-                            console.log('base card div NOT found');
-                        }
-
-
-                        // Select the target node
-                        //const targetNode = document.querySelector('.base-card');
-
-                        // Options for the observer (which mutations to observe)
                         const config = { childList: true, subtree: true };
 
-                        // Callback function to execute when mutations are observed
                         const callback = (mutationsList) => {
                             for (const mutation of mutationsList) {
                                 if (mutation.type === 'childList') {
                                     // Check if any child elements include the accessibility-statement-modal-content
-                                    const accessibilityDiv = baseCardDiv.querySelector('.accessibility-statement-modal-content');
+                                    const accessibilityDiv = targetNode.querySelector('.accessibility-statement-modal-content');
                                     if (accessibilityDiv) {
                                         console.log('Found accessibility-statement-modal-content div:', accessibilityDiv);
                                     }
@@ -257,11 +244,15 @@
                         const observer = new MutationObserver(callback);
 
                         // Start observing the target node for configured mutations
-                        if (baseCardDiv) {
-                            observer.observe(baseCardDiv, config);
+                        if (targetNode) {
+                            console.error('Base-card div found');
+                            observer.observe(targetNode, config);
                         } else {
                             console.error('No element found with class "base-card"');
                         }
+
+
+
 
 
 
