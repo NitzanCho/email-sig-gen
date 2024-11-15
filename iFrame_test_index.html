@@ -4,46 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered iFrame</title>
+    <title>This is a test iFrame</title>
     <style>
-        /* Basic reset for margins and padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Make the body and html take up full height */
         html,
         body {
+            margin: 0;
+            padding: 0;
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0;
         }
 
-        /* Centering the div with iframe inside */
-        .iframe-container {
-            width: 75%;
-            height: 50%;
-            max-width: 1200px;
-            max-height: 900px;
-            border: 2px solid #ccc;
-            background-color: white;
-        }
-
+        /* Style the iframe */
         iframe {
             width: 100%;
-            height: 100%;
+            /* Make iframe full width */
+            height: 100vh;
+            /* Make iframe full height of the viewport */
             border: none;
+            /* Remove iframe border */
+        }
+
+        /* Style for the heading */
+        h1 {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
 
 <body>
-    <div class="iframe-container">
-        <iframe src="https://nitzancho.github.io/email-sig-gen/" title="Email Signature Generator"></iframe>
-    </div>
+    <h1>This is a test iFrame</h1>
+    <iframe
+        src="https://proud-desert-0b947e303.2.azurestaticapps.net/?name=Test+Mauro&qty=1&currency=EUR&taxPricesPolicy=excluding&culture=en-US&modelCode=11&ecommerce=woocommerce&attribute%5Bpa_color%5D=blue&attribute%5Bpa_size%5D=medium&mv=1&nn=1&isBulkAsNNSupported=1&enableShareDesignUrl=true&isClientPreviewsEnabled=1&shareUrlPrefix=https%3A%2F%2Ftest-store.zakeke.com%2Fwp-testing-mauro%2F%2Fwp-testing-mauro%2F%3Fwc-ajax%3Dzakeke_share%26path%3D&tokenOwin=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiU2VsbGVyIiwiUGVybUJpdHMiOiIwMTAwMTExMDAxMTAwMTExMTExMTAxIiwidW5pcXVlX25hbWUiOiJ2YWx2YW5vLm1hdXJvQGdtYWlsLmNvbSIsIlVzZXJJRCI6IjU3MjQiLCJVc2VyTmFtZSI6InZhbHZhbm8ubWF1cm9AZ21haWwuY29tIiwic2FsZXNDaGFubmVsSUQiOiIxIiwiZW1haWwiOiJ2YWx2YW5vLm1hdXJvQGdtYWlsLmNvbSIsIlVzZXJUeXBlSUQiOiIzIiwiSXNzdWVEYXRlIjoiMTMtMTEtMjAyNCAxNy00My0wMVoiLCJVc2VyVmVyc2lvbiI6IjIwMjQxMTEzMTU0ODU1IiwidmlzaXRvcmNvZGUiOiJnbkc1d3paNFN5T1d6alpza2JsaUxqcThRdDJuTGVvNSIsImNsaWVudElEIjoiMjcyNyIsIm5iZiI6MTczMTUxOTc4MiwiZXhwIjoxNzMxNjA2MTgyLCJpYXQiOjE3MzE1MTk3ODIsImlzcyI6Ind3dy56YWtla2UuY29tIiwiYXVkIjoiaHR0cHM6Ly93d3cuemFrZWtlLmNvbSJ9.SXyVshGJvyzgvnYeAq6L6UPNhWJ6xXM5LWAKwbTnepc"></iframe>
 </body>
 
 </html>
